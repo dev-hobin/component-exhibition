@@ -1,1 +1,1 @@
-# component-exhibition
+# Component Exhibition
