@@ -1,5 +1,6 @@
 import Button from "./components/Button";
 import Dropdown from "./components/Dropdown";
+import "./styles/global.css";
 
 function App() {
   return (
