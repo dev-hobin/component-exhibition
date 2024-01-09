@@ -1,4 +1,5 @@
-import { globalStyle } from "@vanilla-extract/css";
+import { globalStyle, assignVars } from "@vanilla-extract/css";
+import { vars as themeVars, darkTheme } from "./theme.css";
 
 /*
   1. Use a more-intuitive box-sizing model.
@@ -58,4 +59,15 @@ globalStyle("p, h1, h2, h3, h4, h5, h6", {
 */
 globalStyle("#root", {
   isolation: "isolate",
+});
+
+/*
+  10. Follow User's Color Theme
+*/
+globalStyle(":root", {
+  "@media": {
+    "(prefers-color-scheme: dark)": {
+      vars: assignVars(themeVars, darkTheme),
+    },
+  },
 });
