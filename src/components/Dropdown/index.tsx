@@ -1,19 +1,36 @@
+import { ReactNode } from "react";
 import * as style from "./style.css";
 
-const Dropdown = () => {
+type TriggerProps = { open?: boolean; children: ReactNode };
+const Trigger = (props: TriggerProps) => {
   return (
-    <details className={style.details}>
-      <summary>open or close</summary>
-      <ul>
-        <li>
-          <a>Item 1</a>
-        </li>
-        <li>
-          <a>Item 2</a>
-        </li>
-      </ul>
+    <details
+      open={props.open}
+      onClick={(ev) => {
+        if (props.open !== undefined) ev.preventDefault();
+      }}
+      className={style.trigger}
+    >
+      {props.children}
     </details>
   );
 };
+
+type LabelProps = { children: ReactNode };
+const Label = (props: LabelProps) => {
+  return <summary className={style.label}>{props.children}</summary>;
+};
+
+type ContentProps = { children: ReactNode };
+const Content = (props: ContentProps) => {
+  return <ul className={style.content}>{props.children}</ul>;
+};
+
+type ItemProps = { children: ReactNode };
+const Item = (props: ItemProps) => {
+  return <li className={style.item}>{props.children}</li>;
+};
+
+const Dropdown = Object.assign({}, { Trigger, Label, Content, Item });
 
 export default Dropdown;

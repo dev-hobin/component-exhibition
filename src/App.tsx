@@ -5,18 +5,15 @@ import Dropdown from "./components/Dropdown";
 
 function App() {
   return (
-    <div>
-      <Dropdown />
-      <div>
-        <Button>Primary</Button>
-        <Button>Secondary</Button>
-        <Button>Accent</Button>
-      </div>
-      <div>
-        <Button>Primary</Button>
-        <Button>Secondary</Button>
-        <Button>Accent</Button>
-      </div>
+    <div data-theme="light">
+      <Dropdown.Trigger>
+        <Dropdown.Label>Theme</Dropdown.Label>
+        <Dropdown.Content>
+          <Dropdown.Item>Light</Dropdown.Item>
+          <Dropdown.Item>Dark</Dropdown.Item>
+        </Dropdown.Content>
+      </Dropdown.Trigger>
+
       <div>
         <Button>Primary</Button>
         <Button>Secondary</Button>
