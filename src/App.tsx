@@ -1,18 +1,12 @@
 import "./styles/global.css";
 
-import Button from "./components/Button";
-import Dropdown from "./components/Dropdown";
+import Button from "./primitives/Button";
+import ThemeController from "./components/ThemeController";
 
 function App() {
   return (
-    <div data-theme="light">
-      <Dropdown.Trigger>
-        <Dropdown.Label>Theme</Dropdown.Label>
-        <Dropdown.Content>
-          <Dropdown.Item>Light</Dropdown.Item>
-          <Dropdown.Item>Dark</Dropdown.Item>
-        </Dropdown.Content>
-      </Dropdown.Trigger>
+    <div>
+      <ThemeController />
 
       <div>
         <Button>Primary</Button>
